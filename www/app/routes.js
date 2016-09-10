@@ -22,6 +22,7 @@ define([
           templateUrl: 'app/templates/dashboard.html',
           controller: 'DashboardCtrl'
         })
+        
         .state('results', {
           url: '/results/:search/:satTrans/:wheelChair/:wheelChairLift',
           controller: 'ResultsCtrl',
@@ -31,7 +32,18 @@ define([
           url: '/detail/:id',
           controller: 'DetailCtrl',
           templateUrl: 'app/templates/detail.html'
+        })
+        
+        .state('login', {
+          url: '/login',
+          templateUrl: 'app/templates/login.html',
+          //controller: 'LoginCtrl'
+        })
+        .state('maps', {
+          url: '/map',
+          templateUrl: 'app/templates/maps.html'
         });
+        
     }
   ]);
 });

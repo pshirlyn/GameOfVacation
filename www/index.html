@@ -8,7 +8,10 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
     <!-- cordova script (this will be a 404 during development) -->
+
     <script src="cordova.js"></script>
     <!-- load requirejs config -->
     <script src="main.js"></script>
@@ -16,6 +19,24 @@
     <script src="lib/requirejs/require.min.js"></script>
     <!-- load boot-script - it loads configs, routes, runs and bootstraps the app -->
     <script src="app/boot.js"></script>
+
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyCBv_DpLs0_gqJvR2I0whdCxCVGvhkCF18&sensor=true"></script>
+  <!--
+      <style>
+
+      .hero {
+      background: url(../img/mod.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 80%;
+      height: 246px;
+      margin: auto;
+      z-index: 2;
+      position: relative;
+  } 
+  </style>
+  -->
   </head>
   <body ng-controller="AppCtrl" ng-show="ready" class="ng-hide">
     <ion-side-menus>

@@ -10,8 +10,10 @@ define([
     '$ionicScrollDelegate',
     '$sce',
     'pageService',
+
     function ($scope, $ionicModal, $ionicScrollDelegate, $sce, pageService) {
       $scope.ready = true;
+
 
       pageService.get().then(function (pages) {
         $scope.pages = pages;
@@ -19,7 +21,7 @@ define([
 
       $ionicModal.fromTemplateUrl('app/templates/page.html', {
         scope: $scope
-      }).then(function (modal) {
+      }).then(function (modal) {  
         $scope.modal = modal;
       });
 
@@ -34,7 +36,7 @@ define([
             $ionicScrollDelegate.$getByHandle('modal').scrollTop();
           }
           $scope.opening = false;
-        });
+        });  
       };
 
       $scope.trustHtml = function (html) {
@@ -44,6 +46,30 @@ define([
       $scope.closeModal = function () {
         $scope.modal.hide();
       };
+
     }
   ]);
+
+  app.controller('MapCtrl', ['$scope', function($scope, $state, $cordovaGeolocation) {
+    console.log("die");
+    var options = {timeout: 10000, enableHighAccuracy: true};
+   
+      $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+   
+      var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+   
+      var mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+   
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+   
+    }, function(error){
+      console.log("Could not get location");
+    });
+  }
+  ]);
+
 });

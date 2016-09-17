@@ -41,7 +41,8 @@ define([
         })
         .state('maps', {
           url: '/map',
-          templateUrl: 'app/templates/maps.html'
+          templateUrl: 'app/templates/maps.html',
+          controller: 'MapCtrl'
         });
         
     }

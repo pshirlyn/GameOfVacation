@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-nav-title>Details</ion-nav-title>
+  <ion-nav-title>Information</ion-nav-title>
   <ion-content padding="true">
     <ion-refresher class="spinner-balanced" on-refresh="reload()"></ion-refresher>
     <div class="text-center">
@@ -17,18 +17,24 @@
       <ion-list>
         <ion-item class="item-divider item-icon-right"><b>Address</b> <i class="icon ion-location"></i></ion-item>
         <ion-item>
-          {{event.street}} {{event.number}}<br>
-          {{event.zip}} {{event.city}}
+          123 Mission Street
         </ion-item>
       </ion-list>
       <br>
       <ion-list>
-        <ion-item class="item-divider item-icon-right"><b>Dates</b> <i class="icon ion-ios-calendar-outline"></i></ion-item>
+        <ion-item class="item-divider item-icon-right"><b>Dates of Events</b> <i class="icon ion-ios-calendar-outline"></i></ion-item>
         <ion-item ng-repeat="date in event.dates">
           {{date}}
         </ion-item>
       </ion-list>
       <br>
+      <ion-list>
+        <ion-item class="item-divider item-icon-right"><b>Information</b> <i class="icon ion-ios-calendar-outline"></i></ion-item>
+        <ion-item ng-repeat="date in event.dates">
+          {{date}}
+        </ion-item>
+      </ion-list>
+      <b>
       <ion-list>
         <ion-item class="item-divider item-icon-right"><b>Contact</b> <i class="icon ion-chatboxes"></i></ion-item>
         <ion-item class="item-icon-right" ng-click="call()">
